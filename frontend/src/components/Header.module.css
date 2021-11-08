@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #21507c;
+    color: #fff;
+    height: 70px;
+}
+
+.Logo{
+    width: 324px;
+    display: flex;
+}
+
+
+.HeaderTitles {
+    padding-right: 70px;
+}
+
+.HeaderTitleButton {
+    background-color: #fff;
+    color: black;
+    border-radius: 500px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.HeaderTitleMenu {
+    border: solid rgb(255, 255, 255) 1px ;
+    border-radius: 15%;
+    padding: 5px;
+}
+
+
+ button {
+    background: none;
+    border: none;
+    color:rgb(255, 255, 255);
+    cursor: pointer;
+ }
+
+ button:hover {
+     color: rgb(158, 98, 255);
+ }
