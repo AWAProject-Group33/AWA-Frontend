@@ -1,30 +1,34 @@
-import React from 'react';
+import React, {useState} from 'react';
+import FormModal from './formModal';
+import FormOwnerModal from './formOwnerModal';
 
-export default function Modal() 
+export default function Modal(props) 
 {
-    function CancelButton() {
-        console.log("Cancel");
-    } 
+    const [showUserRegisterForm, setShowUserRegisterForm] = useState(false);
+    const [showOwnerRegisterForm, setShowOwnerRegisterForm] = useState(false);
 
-    function RegisterButton() {
-        console.log("Register");
+    function CancelButton() {
+        props.onCancel(); //second method in second function
+    } 
+        
+    function ShowUserRegisterForm() {
+        setShowUserRegisterForm(true);
+        setShowOwnerRegisterForm(false);
     }
 
+    function ShowOwnerRegisterForm() {
+        setShowOwnerRegisterForm(true);
+        setShowUserRegisterForm(false);
+    }
     return (
         <div className="modal">
-            <h1>User Registration</h1>
-            <form className="formRegister">
-                <label>Name: <input type="text" name="name" /></label>
-                <label>Adress: <input type="text" name="adress" /></label>
-                <label>Telephone: <input type="tel" name="code" placeholder="0XX-XXXXXXX" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required/></label>
-                <label>E-mail: <input type="email" name="Email" placeholder="username@provider.something" /></label>
-                <label>Retype E-mail: <input type="text" name="ReEmail" placeholder="username@provider.something"/></label>
-                <label>Password: <input type="password" name="password" /></label>
-                <label>Retype Password: <input type="password" name="Repassword" /></label>
-            </form>
-                <div className="modal-button">
-                    <button onClick={CancelButton}>Cancel</button>
-                    <button onClick={RegisterButton}>Register</button>
+            <button onClick={ShowUserRegisterForm}>User Registration</button>
+            <button onClick={ShowOwnerRegisterForm}>Owner Registration</button>
+            {showUserRegisterForm ? <FormModal /> : null}
+            {showOwnerRegisterForm ? <FormOwnerModal /> : null}
+                <div>
+                    <button className="modal-button" onClick={CancelButton}>Cancel</button>
+                    <button className="modal-button-b" onClick={props.onConfirm} >Register</button>
                 </div>
         </div>
     )

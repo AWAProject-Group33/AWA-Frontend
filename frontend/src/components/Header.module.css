@@ -35,12 +35,13 @@
 
 
  button {
-    background: none;
+    background: #000000;
+    padding: 10px;
     border: none;
     color:rgb(255, 255, 255);
     cursor: pointer;
  }
 
  button:hover {
-     color: rgb(158, 98, 255);
+     color: rgb(255, 170, 170);
  }
