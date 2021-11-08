@@ -61,4 +61,10 @@
 .formRegister {
   display: table-caption;
   text-align: start;
+  color: black;
 }
+
+h1 {
+  color: black;
+}
+

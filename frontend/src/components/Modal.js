@@ -26,7 +26,6 @@ export default function Modal()
                     <button onClick={CancelButton}>Cancel</button>
                     <button onClick={RegisterButton}>Register</button>
                 </div>
-           
         </div>
     )
 }
