@@ -5,7 +5,7 @@ export default function Content()
 {
     return(
     <div className={styles.container}>
-        This is the bottom of the page
+        This is the bottom
     </div>
     );
 }

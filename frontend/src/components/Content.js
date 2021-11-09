@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './content.module.css';
 import logo from './g1009-8.png';
     
-export default function Content() 
+export default function Content(props) 
 {
     return(
     <div className={styles.container} >
@@ -12,8 +12,8 @@ export default function Content()
             <h1>Want a fast-food? Search for nearby restaurants!</h1>
             <h1>Already know what you want? Use the quick search!</h1>
             <div className={styles.field}>    
-                <input  type="text" placeholder="Type your place or will." />
-                <button type="button" id="search">Search</button>
+                <input  type="text" placeholder="Type an address, a place or a will."/>
+                <button type="button" id="search" onClick={props.onSearch} >Search</button>
             </div>
         </div>
         <div className={styles.AboutUsContainer}>
