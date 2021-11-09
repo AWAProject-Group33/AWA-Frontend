@@ -3,3 +3,15 @@
    background-color: rgb(253, 170, 170);
    margin: 5px;
 }
+
+.box {
+   border: solid black 1px;
+   margin: 10px;
+   width: 300px;
+}
+
+.restaurantBoxes {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}

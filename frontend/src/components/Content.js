@@ -26,7 +26,7 @@ export default function Content(props)
                 comunity throught rewards and advantages for our main supporters, our customers.</p></p>
             </div>
         </div>
-        <img src={logo} className="" alt="logo" />
+        <img src={logo} className="" alt="logo"  width="400" height="500"/>
     </div>
     );
 }

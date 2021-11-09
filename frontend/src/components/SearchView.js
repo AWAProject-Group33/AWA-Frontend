@@ -1,6 +1,6 @@
 import React from 'react';
-import star from './estrela.png';
 import styles from './SearchView.module.css';
+import RestaurantBox from './RestaurantBox';
     
 export default function SearchView() 
 {
@@ -47,6 +47,23 @@ export default function SearchView()
             <button>Promotion</button>
             <button>Free Delivery</button>
             <hr />
+        <div className={styles.restaurantBoxes}>
+            <span className={styles.box}>
+                <RestaurantBox name="Luigi" cuisine="Italian" star="1/5" price="$" distance="Less than 1 KM" type="Delivery"/>
+            </span>
+            <span className={styles.box}>
+                <RestaurantBox name="Luigi" cuisine="Italian" star="1/5" price="$" distance="Less than 1 KM" type="Delivery"/>
+            </span>
+            <span className={styles.box}>
+                <RestaurantBox name="Luigi" cuisine="Italian" star="1/5" price="$" distance="Less than 1 KM" type="Delivery"/>
+            </span>
+            <span className={styles.box}>
+                <RestaurantBox name="Luigi" cuisine="Italian" star="1/5" price="$" distance="Less than 1 KM" type="Delivery"/>
+            </span>
+            <span className={styles.box}>
+                <RestaurantBox name="Luigi" cuisine="Italian" star="1/5" price="$" distance="Less than 1 KM" type="Delivery"/>
+            </span>
+        </div>
         </div>
     </div>
     );
