@@ -43,9 +43,9 @@
 }
 
 .modal > button {
-  background-color: #61dafb;
+  background-color: #000000;
   margin: 5px;
-  color:black;
+  color:rgb(255, 255, 255);
 }
 .backdrop {
   position: fixed;

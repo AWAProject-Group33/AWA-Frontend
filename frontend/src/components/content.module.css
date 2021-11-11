@@ -21,18 +21,17 @@
   }
   
   .field>input[type=text],
-  .field>button {
+  .fieldButton {
     display:block;
     font:1.2em 'Montserrat Alternates';
   }
   
   .field>input[type=text] {
     flex:1;
-    padding:0.6em;
     border:0.2em solid #48525c;
   }
   
-  .field>button {
+  .fieldButton {
     padding:0.6em 0.8em;
     background-color:#48525c;
     color:white;

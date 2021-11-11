@@ -1,13 +1,22 @@
+.container {
+   display: flex;
+   margin-top: 30px;
+}
+
 .SearchButtons > button{
    color: rgb(255, 255, 255);
-   background-color: rgb(253, 170, 170);
+   background-color: rgb(0, 0, 0);
    margin: 5px;
 }
 
+.SearchButtons > button:hover {
+   color: rgb(255, 170, 170);
+}
+
 .box {
-   border: solid black 1px;
    margin: 10px;
    width: 300px;
+   background-color:rgb(255,170,170);
 }
 
 .restaurantBoxes {
@@ -15,3 +24,29 @@
    flex-wrap: wrap;
    justify-content: center;
 }
+
+.searchOptions {
+   display: inline-grid;
+   height: fit-content;
+   margin-left: 20px;
+}
+
+select {
+   margin-top: 5px;
+   padding-top: 5px;
+}
+
+.searchOptions > input {
+   margin-top: 10px;
+   padding-top: 5px;
+}
+
+.restaurantBoxes > a {
+   color: rgb(0, 0, 0);
+}
+
+.restaurantBoxes > a:hover {
+   border: solid rgb(0, 0, 0) 3px;
+   color:rgb(221, 40, 40);
+}
+

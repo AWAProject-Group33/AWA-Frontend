@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './content.module.css';
 import logo from './g1009-8.png';
+import {Link} from "react-router-dom";
     
-export default function Content(props) 
+export default function Content() 
 {
     return(
     <div className={styles.container} >
@@ -13,7 +14,7 @@ export default function Content(props)
             <h1>Already know what you want? Use the quick search!</h1>
             <div className={styles.field}>    
                 <input  type="text" placeholder="Type an address, a place or a will."/>
-                <button type="button" id="search" onClick={props.onSearch} >Search</button>
+                <Link to="/search"><button type="button" className={styles.fieldButton}>Search</button></Link>
             </div>
         </div>
         <div className={styles.AboutUsContainer}>

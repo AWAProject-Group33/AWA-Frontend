@@ -1,4 +1,27 @@
 .container {
     background-color: #48525c;
+    display: flex;
+    justify-content: space-around;
 }
 
+.navigateContainer {
+    display: flex;
+    text-align: justify;
+}
+
+lu {
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+h3 {
+    color: white;
+}
+
+a:hover {
+    color: rgb(255, 170, 170);
+}

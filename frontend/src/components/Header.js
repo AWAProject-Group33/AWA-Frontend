@@ -35,7 +35,7 @@ export default function Header(props)
     return(
         <div className={styles.container}>
                 <div className={styles.containerA}>
-                    <img className={styles.Logo} src={logo} alt={logo}></img>
+                    <a href="/"><img className={styles.Logo} src={logo} alt={logo}></img></a>
                 </div>
                 <div>
                     <span className={styles.HeaderTitles}><button onClick={RegisterBtn}>Register</button></span>
