@@ -1,14 +1,12 @@
 import MenuComponent from './menuComponent';
 import CartComponent from './cartComponent';
-                      
 
 export default function PlaceView(props) {
     return (
       <div>
           <div style={{display: 'flex', padding: '10px', paddingLeft: "40px", paddingTop: "40px"}}>
                 <img src={""} style={{width: "100px", height: "100px"}}></img>
-                <h1 style={{paddingLeft: "40px"}}>{props.placeName}</h1>
-                
+                <h1 style={{paddingLeft: "40px"}}>{props.placeName}</h1>     
           </div>
           <div style={{display: 'flex', justifyContent: "space-around"}}>
                 <div style={{padding: '20px', width: '70%'}}>

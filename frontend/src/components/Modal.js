@@ -22,8 +22,12 @@ export default function Modal(props)
     }
     return (
         <div className="modal">
-            <button onClick={ShowUserRegisterForm}>User Registration</button>
-            <button onClick={ShowOwnerRegisterForm}>Owner Registration</button>
+            <spam>
+            <button className="modal-button" onClick={ShowUserRegisterForm}>User Registration</button>
+            </spam>
+            <spam>
+            <button className="modal-button" onClick={ShowOwnerRegisterForm}>Owner Registration</button>
+            </spam>
             {showUserRegisterForm ? <FormModal /> : null}
             {showOwnerRegisterForm ? <FormOwnerModal /> : null}
                 <div>

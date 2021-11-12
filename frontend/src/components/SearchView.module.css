@@ -41,11 +41,11 @@ select {
    padding-top: 5px;
 }
 
-.restaurantBoxes > a {
+.restaurantBox {
    color: rgb(0, 0, 0);
 }
 
-.restaurantBoxes > a:hover {
+.restaurantBox:hover {
    border: solid rgb(0, 0, 0) 3px;
    color:rgb(221, 40, 40);
 }
