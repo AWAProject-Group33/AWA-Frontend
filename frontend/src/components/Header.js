@@ -4,6 +4,7 @@ import logo from './LogoHeader.png';
 import Modal from './Modal';
 import ModalLogin from './ModalLogin';
 import Backdrop from './BackDrop';
+import {Link} from "react-router-dom";
 
 export default function Header(props) 
 {
@@ -35,7 +36,7 @@ export default function Header(props)
     return(
         <div className={styles.container}>
                 <div className={styles.containerA}>
-                    <a href="/"><img className={styles.Logo} src={logo} alt={logo}></img></a>
+                    <Link to="/"><img className={styles.Logo} src={logo} alt={logo}></img></Link>
                 </div>
                 <div>
                     <span className={styles.HeaderTitles}><button onClick={RegisterBtn}>Register</button></span>

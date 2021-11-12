@@ -1,0 +1,23 @@
+.productsSelection {
+    justify-content: space-between;
+    display: flex;
+    background-color: rgb(255, 170, 170);
+    padding-Left:10px;
+    padding-Right:10px;
+    margin: 10px;
+}
+
+.productQuantity {
+    display: flex;
+
+}
+
+.productQuantity > button {
+    padding: 5px;
+    height: 40px;
+    align-self: center;
+    border-radius: 4px;
+}
+.productQuantity > input {
+    margin-right: 10px;
+}

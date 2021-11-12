@@ -5,9 +5,13 @@ import RestaurantBox from './RestaurantBox';
 export default function SearchView() 
 {
     return(
-    <div className={styles.container}>
-        <div className={styles.searchOptions}>
+    <div>
+            <div>
             <input  type="text" placeholder="Type an address, a place or a will."/>
+            </div>
+    <div className={styles.container}>     
+        <div className={styles.searchOptions}>
+            
             <select>
                 <option selected value="cuisine">Cuisine</option>
                 <option value="italian">Italian</option>
@@ -64,6 +68,7 @@ export default function SearchView()
                 <RestaurantBox name="Luigi" cuisine="Italian" star="1/5" price="$" distance="Less than 1 KM" type="Delivery"/>
             </a>
         </div>
+    </div>
     </div>
     );
 }

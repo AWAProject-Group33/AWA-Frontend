@@ -12,6 +12,7 @@ import OurTeam from './components/OurTeam';
 import ContactUs from './components/Contact';
 import News from './components/News';
 import Events from './components/Events';
+import PlaceView from './components/placeView';
 
 
 
@@ -27,7 +28,8 @@ function App() {
   <BrowserRouter>
     <div className="App">
       <Header />
-      {/*searchClicked ?  <SearchView /> : <Content onSearch={SearchClick} />*/ }
+      
+      {/*searchClicked ?  <SearchView /> : <Content onSearch={SearchClick} />  */ }
         <Routes >
           <Route path="/" element={<Content />} />
           <Route path="/search" element={<SearchView />} />
@@ -37,6 +39,7 @@ function App() {
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/news" element={<News />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/restaurant" element={<PlaceView placeName="Luigi´s"/> /*Need especific path for every restaurant*/} />
         </Routes>
       <Bottom />
     </div>
