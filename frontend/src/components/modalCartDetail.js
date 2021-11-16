@@ -1,3 +1,6 @@
+import {Link} from 'react-router-dom';
+import Styles from './modalCartDetail.module.css';
+
 export default function FormModal(props) {
     return (
       <div className="modal">
@@ -20,7 +23,7 @@ export default function FormModal(props) {
                   <label>Adress<input type="text" placeholder=""></input></label>
               </form>
             <button className="modal-button" onClick={props.onClick}>Cancel</button>
-            <button className="modal-button-b">Make Payment</button>
+            <Link to="/orderconfirmation"><button className="modal-button-b">Make Payment</button></Link>
           </div>
       </div>
     )

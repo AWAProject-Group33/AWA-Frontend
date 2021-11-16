@@ -13,6 +13,9 @@ import ContactUs from './components/Contact';
 import News from './components/News';
 import Events from './components/Events';
 import PlaceView from './components/placeView';
+import OrderConfirmation from './components/orderConfirmation'
+import UserProfile from './components/userProfile';
+import UserSettings from './components/userSettings';
 
 
 
@@ -39,7 +42,10 @@ function App() {
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/news" element={<News />} />
           <Route path="/events" element={<Events />} />
-          <Route path="/restaurant" element={<PlaceView placeName="Luigi´s"/> /*Need especific path for every restaurant*/} />
+          <Route path="/restaurant" element={<PlaceView placeName="Luigi´s"/> /*Need specific path for every restaurant*/} />
+          <Route path="/orderconfirmation" element={<OrderConfirmation />} />
+          <Route path="/myprofile" element={<UserProfile />} />
+          <Route path="/settings" element={<UserSettings />} />
         </Routes>
       <Bottom />
     </div>
