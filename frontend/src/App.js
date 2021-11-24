@@ -16,6 +16,7 @@ import PlaceView from './components/placeView';
 import OrderConfirmation from './components/orderConfirmation'
 import UserProfile from './components/userProfile';
 import UserSettings from './components/userSettings';
+import OwnerProfile from './components/OwnerProfile';
 
 
 
@@ -45,7 +46,7 @@ function App() {
           <Route path="/restaurant" element={<PlaceView placeName="Luigi´s"/> /*Need specific path for every restaurant*/} />
           <Route path="/orderconfirmation" element={<OrderConfirmation />} />
           <Route path="/myprofile" element={<UserProfile />} />
-          <Route path="/settings" element={<UserSettings />} />
+          <Route path="/ownerprofile" element={<OwnerProfile />} />
         </Routes>
       <Bottom />
     </div>

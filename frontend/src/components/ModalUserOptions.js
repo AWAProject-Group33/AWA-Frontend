@@ -21,8 +21,6 @@ function ModalUserOptions(props)
             <hr></hr>
             <button onClick={ShowCart} style={{border: "none"}}>Shopping Cart</button>
             <hr></hr>
-            <button onClick={props.onProfileClick} style={{border: "none"}}><Link to="/settings">Settings</Link></button>
-            <hr></hr>
             
             <button onClick={props.onLogOutClick} style={{border: "none"}}><Link to="/">LogOut</Link></button>
             {showCartDetail ? <ModalShoppingCart onClick={HideCart}/> : null}

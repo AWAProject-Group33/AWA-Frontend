@@ -16,6 +16,7 @@ export default function OrderConfirmation() {
             <spam>3</spam>
             <spam>4</spam>
             </div>
+            <button>Order Delivered</button>
         </div>
     );
 }
