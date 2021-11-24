@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Luigi´s",
+        "cuisine": "Italian",
+        "star": "3/5",
+        "price": "$$",
+        "distance": "Less than 1 KM",
+        "method": "Delivery / Take Away",
+        "type": "Buffet"
+    },
+    {
+        "name": "Mario",
+        "cuisine": "Italian",
+        "star": "5/5",
+        "price": "$$$$",
+        "distance": "Less than 5 KM",
+        "method": "Take Away",
+        "type": "Fine Dinning"
+    },
+    {
+        "name": "Olimpo",
+        "cuisine": "Greek",
+        "star": "4/5",
+        "price": "$$$",
+        "distance": "More than 10 KM",
+        "method": "Delivery",
+        "type": "Fast Casual"
+    },
+    {
+        "name": "Tokyo",
+        "cuisine": "Japanese",
+        "star": "2/5",
+        "price": "$",
+        "distance": "Less than 10 KM",
+        "method": "Delivery / Take Away",
+        "type": "Fast Food"
+    },
+    {
+        "name": "Jing",
+        "cuisine": "Chinese",
+        "star": "3/5",
+        "price": "$$",
+        "distance": "Less than 5 KM",
+        "method": "Take Away",
+        "type": "Casual Dinning"
+    }
+]

@@ -1,9 +1,14 @@
 import React from 'react';
 import styles from './SearchView.module.css';
 import RestaurantBox from './RestaurantBox';
+import {Link} from "react-router-dom";
+
     
-export default function SearchView() 
-{
+export default function SearchView(props) {
+
+
+
+
     return(
     <div>
             <div>
@@ -35,7 +40,7 @@ export default function SearchView()
                 <option value="other">more than 10 KM</option>
             </select>
             <select>
-                <option selected value="type">Type</option>
+                <option selected value="method">Withdraw Method</option>
                 <option value="delivary">Delivery</option>
                 <option value="takeaway">Take Away</option>
             </select>
@@ -46,27 +51,23 @@ export default function SearchView()
                 <option value="average">$$$</option>
                 <option value="expensive">$$$$</option>
             </select>
+            <select>
+                <option selected value="type">Type</option>
+                <option value="buffet">Buffet</option>
+                <option value="fastfood">Fast Food</option>
+                <option value="fastcasual">Fast Casual</option>
+                <option value="casual">Casual Dinning</option>
+                <option value="fine">Fine Dinning</option>
+            </select>
             <span className={styles.SearchButtons}>
                 <button>Promotion</button>
                 <button>Free Delivery</button>
             </span>
         </div>
         <div className={styles.restaurantBoxes}>
-            <a href="" className={styles.box}>
-                <RestaurantBox name="Luigi" cuisine="Italian" star="1/5" price="$" distance="Less than 1 KM" type="Delivery"/>
-            </a>
-            <a href="" className={styles.box}>
-                <RestaurantBox name="Luigi" cuisine="Italian" star="1/5" price="$" distance="Less than 1 KM" type="Delivery"/>
-            </a>
-            <a href="" className={styles.box}>
-                <RestaurantBox name="Luigi" cuisine="Italian" star="1/5" price="$" distance="Less than 1 KM" type="Delivery"/>
-            </a>
-            <a href="" className={styles.box}>
-                <RestaurantBox name="Luigi" cuisine="Italian" star="1/5" price="$" distance="Less than 1 KM" type="Delivery"/>
-            </a>
-            <a href="" className={styles.box}>
-                <RestaurantBox name="Luigi" cuisine="Italian" star="1/5" price="$" distance="Less than 1 KM" type="Delivery"/>
-            </a>
+            { props.contacts.map(contact => <Link to={contact.id} className={styles.box}>
+                <RestaurantBox name={contact.name} cuisine={contact.cuisine} star={contact.star} price={contact.price} distance={contact.distance} method={contact.method} type={contact.type}/>
+            </Link>)}
         </div>
     </div>
     </div>

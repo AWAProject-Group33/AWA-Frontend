@@ -14,7 +14,7 @@ export default function Content()
             <h1>Already know what you want? Use the quick search!</h1>
             <div className={styles.field}>    
                 <input  type="text" placeholder="Type an address, a place or a will."/>
-                <Link to="/search"><button type="button" className={styles.fieldButton}>Search</button></Link>
+                <Link to="/restaurants"><button type="button" className={styles.fieldButton}>Search</button></Link>
             </div>
         </div>
         <div className={styles.AboutUsContainer}>
