@@ -34,6 +34,7 @@ function App() {
     setSearchClicked(true);
   }*/
 
+
   return (
   <BrowserRouter>
     <div className="App">
