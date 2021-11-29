@@ -18,15 +18,18 @@ import UserProfile from './components/userProfile';
 import UserSettings from './components/userSettings';
 import OwnerProfile from './components/OwnerProfile';
 import {v4 as uuidv4} from "uuid";
-import restaurantData from './data.json'
+import axios from 'axios';
+import TestComponent from './components/testComponent';
+import './service.js'
+//import restaurantData from './data.json'
 
 
 
 function App() {
 
-  const contacts = restaurantData.map (contact => {
-    return {...contact, id: uuidv4()}}
-)
+  
+
+  
 
   /*const [searchClicked, setSearchClicked] = useState(false);
 
@@ -43,14 +46,14 @@ function App() {
       {/*searchClicked ?  <SearchView /> : <Content onSearch={SearchClick} />  */ }
         <Routes >
           <Route path="/" element={<Content />} />
-          <Route path="/restaurants" element={<SearchView contacts={contacts}/>}/>
+          <Route path="/consumer/all"element={<getAll />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/ourteam" element={<OurTeam />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/news" element={<News />} />
           <Route path="/events" element={<Events />} />
-          <Route path="/restaurants/:id" element={<PlaceView contacts={contacts}/>} />
+          <Route path="/restaurants/:id"  />
           <Route path="/orderconfirmation" element={<OrderConfirmation />} />
           <Route path="/myprofile" element={<UserProfile />} />
           <Route path="/ownerprofile" element={<OwnerProfile />} />
