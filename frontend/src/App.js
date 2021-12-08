@@ -19,8 +19,8 @@ import UserSettings from './components/userSettings';
 import OwnerProfile from './components/OwnerProfile';
 import {v4 as uuidv4} from "uuid";
 import axios from 'axios';
-import TestComponent from './components/testComponent';
-import './service.js'
+import TestComponent from './components/TestComponent';
+
 //import restaurantData from './data.json'
 
 
@@ -46,7 +46,7 @@ function App() {
       {/*searchClicked ?  <SearchView /> : <Content onSearch={SearchClick} />  */ }
         <Routes >
           <Route path="/" element={<Content />} />
-          <Route path="/consumer/all"element={<getAll />} />
+          <Route path="/consumer/all"element={<TestComponent />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/ourteam" element={<OurTeam />} />

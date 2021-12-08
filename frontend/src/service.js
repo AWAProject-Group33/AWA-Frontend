@@ -6,6 +6,5 @@ class TutorialDataService {
   }
 }
 
-console.log(getAll);
 
 export default new TutorialDataService();
