@@ -6,23 +6,37 @@ export default function TestComponent() {
 
     
 
-    const [repo, setRepo] = useState([]);
+    const [data, setRestaurant] = useState([]);
 
-    const getRepo = () => {
-        axios.get('http://localhost:8080/api/consumer/all')
-            .then((response) => {
-                console.log(response);
-                const myRepo = response.data;
-                setRepo(myRepo);
+    useEffect(() => {
+        axios.get('http://localhost:8080/api/restaurant/all')
+            .then(result => setRestaurant(result.data));
+        console.log(data);
+            }, []);
+    
 
-            });
-    };
-
-    useEffect(() => getRepo(), []);
+   
 
     return(
         <div>
-            {repo.Map((data, key) => {
+            <tbody>
+                {data.map(item => {
+                    return <tr key={item.restaurantId}>
+                    <td>{item.restaurantName}</td>
+                    <td>{item.restaurantAddress}</td>
+                    <td>{item.operatingHours}</td>
+                    <td>{item.restaurantType}</td>
+                    <td>{item.priceLevel}</td>
+                    </tr>
+                })}
+            </tbody>
+            
+        </div>
+    );
+
+    /*return(
+        <div>
+            {consumer.Map((data, key) => {
                 return (
                     <div key={key}>
                         {data.firstName + 
@@ -36,5 +50,5 @@ export default function TestComponent() {
             
             test1
         </div>
-    );
+    );*/
 }

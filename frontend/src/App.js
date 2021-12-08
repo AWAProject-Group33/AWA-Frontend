@@ -46,7 +46,7 @@ function App() {
       {/*searchClicked ?  <SearchView /> : <Content onSearch={SearchClick} />  */ }
         <Routes >
           <Route path="/" element={<Content />} />
-          <Route path="/consumer/all"element={<TestComponent />} />
+          <Route path="/restaurants"element={<TestComponent />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/ourteam" element={<OurTeam />} />
