@@ -1,13 +1,12 @@
 import React from 'react';
 import styles from './SearchView.module.css';
 import RestaurantBox from './RestaurantBox';
+//import axios from "axios";
+//import { useEffect, useState } from "react";
 import {Link} from "react-router-dom";
 
     
 export default function SearchView(props) {
-
-
-
 
     return(
     <div>
@@ -65,9 +64,20 @@ export default function SearchView(props) {
             </span>
         </div>
         <div className={styles.restaurantBoxes}>
-            { props.contacts.map(contact => <Link to={contact.id} className={styles.box}>
+            { /*props.contacts.map(contact => <Link to={contact.id} className={styles.box}>
                 <RestaurantBox name={contact.name} cuisine={contact.cuisine} star={contact.star} price={contact.price} distance={contact.distance} method={contact.method} type={contact.type}/>
-            </Link>)}
+            </Link>)*/
+            props.restaurants.map(item => {
+                return (
+                <Link to={item.id} className={styles.box}>
+                    <RestaurantBox restaurants={props.restaurants} name={item.restaurantName} cuisine={item.operatingHours} star={item.restaurantId} 
+                    distance={item.restaurantAddress} price={item.priceLevel}  type={item.restaurantType}/>
+                </Link>
+                )
+                
+                
+            })
+            }
         </div>
     </div>
     </div>

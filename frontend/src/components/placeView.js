@@ -3,19 +3,20 @@ import CartComponent from './cartComponent';
 import { useParams } from 'react-router-dom';
 
 export default function PlaceView(props) {
-
     const result = useParams();
 
-    const contact = props.contacts.find(contact => contact.id === result.id);
-    if (contact == null) {
+    const restaurant = props.restaurants.find(restaurant => restaurant.id === result.id);
+    if (restaurant == null) {
         return 0;
     }
+
+    
 
     return (
       <div>
           <div style={{display: 'flex', padding: '10px', paddingLeft: "40px", paddingTop: "40px"}}>
-                <img src={""} style={{width: "100px", height: "100px"}}></img>
-                <h1 style={{paddingLeft: "40px"}}>{contact.name}</h1>     
+                <img alt="placeImg" src={""} style={{width: "100px", height: "100px"}}></img>
+                <h1 style={{paddingLeft: "40px"}}>{restaurant.restaurantName}</h1>     
           </div>
           <div style={{display: 'flex', justifyContent: "space-around"}}>
                 <div style={{padding: '20px', width: '70%'}}>

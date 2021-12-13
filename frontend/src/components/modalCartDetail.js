@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import Styles from './modalCartDetail.module.css';
+//import Styles from './modalCartDetail.module.css';
 
 export default function FormModal(props) {
     return (

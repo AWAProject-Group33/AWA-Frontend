@@ -1,5 +1,5 @@
 
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
@@ -15,45 +15,77 @@ import Events from './components/Events';
 import PlaceView from './components/placeView';
 import OrderConfirmation from './components/orderConfirmation'
 import UserProfile from './components/userProfile';
-import UserSettings from './components/userSettings';
+//import UserSettings from './components/userSettings';
 import OwnerProfile from './components/OwnerProfile';
 import {v4 as uuidv4} from "uuid";
-import restaurantData from './data.json'
+import axios from 'axios';
+import TestComponent from './components/testComponent';
+
+//import restaurantData from './data.json'
 
 
 
-function App() {
+function App(props) {
 
-  const contacts = restaurantData.map (contact => {
-    return {...contact, id: uuidv4()}}
-)
+  const [data, setRestaurant] = useState([]);
 
-  /*const [searchClicked, setSearchClicked] = useState(false);
+    useEffect(() => {
+        axios.get('http://localhost:8080/api/restaurant/all')
+            .then(result => setRestaurant(result.data));
+            console.log(data);
+            }, []);
 
-  function SearchClick() {
-    setSearchClicked(true);
-  }*/
+    const restaurantsData = data.map (restaurant => {
+      return {...restaurant, id: uuidv4()}
+    })
+    //console.log(restaurantsData);
+  
+    const [data2, setConsumer] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:8080/api/consumer/all')
+            .then(result => setConsumer(result.data));
+            console.log(data);
+            }, []);
+
+    const consumerData = data2.map (consumer => {
+      return {...consumer, id: uuidv4(), type: "consumer"}
+    })
+    //console.log(consumerData);
+
+    const [data3, setManager] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:8080/api/manager/all')
+            .then(result => setManager(result.data));
+            console.log(data);
+            }, []);
+
+    const managerData = data3.map (manager => {
+      return {...manager, id: uuidv4(), type: "manager"}
+    })
+    //console.log(managerData);
 
 
   return (
   <BrowserRouter>
     <div className="App">
-      <Header />
-      
+      <Header consumers={consumerData} managers={managerData}/>
       {/*searchClicked ?  <SearchView /> : <Content onSearch={SearchClick} />  */ }
         <Routes >
           <Route path="/" element={<Content />} />
-          <Route path="/restaurants" element={<SearchView contacts={contacts}/>}/>
+          <Route path="/restaurants" element={<SearchView restaurants={restaurantsData}/>} />
+          <Route path="/restaurants/:id" element={<PlaceView restaurants={restaurantsData}/>} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/ourteam" element={<OurTeam />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/news" element={<News />} />
           <Route path="/events" element={<Events />} />
-          <Route path="/restaurants/:id" element={<PlaceView contacts={contacts}/>} />
           <Route path="/orderconfirmation" element={<OrderConfirmation />} />
-          <Route path="/myprofile" element={<UserProfile />} />
-          <Route path="/ownerprofile" element={<OwnerProfile />} />
+          <Route path="/consumer/:id" element={<UserProfile consumers={consumerData} managers={managerData}/>} />
+          <Route path="/manager/:id" element={<OwnerProfile consumers={consumerData} managers={managerData}/>} />
+          <Route path="/test" element={<TestComponent />} />
         </Routes>
       <Bottom />
     </div>

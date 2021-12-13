@@ -20,15 +20,17 @@ export default function CartComponent()
   function CancelModal() {
     setShowCartDetail(false);
   }
+
+  console.log("Ignore "+ showBackDrop); 
   return (
     <div className={styles.Container}>
 
       {showCartDetail ? <ModalCartDetail onClick={CancelModal}/> : null }
       {showCartDetail ? <Backdrop onClick={CloseModal}/>: null}
       <h3>SHOPPING CART</h3>
-      <spam style={{paddingLeft: "5px"}}>
+      <span style={{paddingLeft: "5px"}}>
           <button onClick={ShowDetails}>Details and Payment</button>
-      </spam>
+      </span>
     </div>
     )
       

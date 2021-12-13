@@ -22,17 +22,17 @@ export default function Modal(props)
     }
     return (
         <div className="modal">
-            <spam>
+            <span>
             <button className="modal-button" onClick={ShowUserRegisterForm}>User Registration</button>
-            </spam>
-            <spam>
+            </span>
+            <span>
             <button className="modal-button" onClick={ShowOwnerRegisterForm}>Owner Registration</button>
-            </spam>
+            </span>
             {showUserRegisterForm ? <FormModal /> : null}
             {showOwnerRegisterForm ? <FormOwnerModal /> : null}
                 <div>
                     <button className="modal-button" onClick={CancelButton}>Cancel</button>
-                    <button className="modal-button-b" onClick={props.onConfirm} >Register</button>
+                    <button className="modal-button-b" onClick={props.onConfirmRegister} >Register</button>
                 </div>
         </div>
     )
