@@ -6,12 +6,12 @@ export default function TestComponent() {
 
     
     
-    function ConfirmRegisterModal() { //not working - cors problem
-        axios.post('http://localhost:8080/api/manager/all', {
-            firstName: 'Fred',
-            lastName: 'Flintstone',
-            email: "fred.flint@abadaba.com",
-            password: "vilma"
+    function ConfirmRegisterModal() { 
+        axios.post('/api/manager/registernewmanager', {
+            firstName: 'Herokutest',
+            lastName: 'Herokulastname',
+            email: "Herokuemail",
+            password: "1234"
           })
           .then(function (response) {
             console.log(response);

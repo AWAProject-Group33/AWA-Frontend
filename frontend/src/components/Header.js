@@ -18,12 +18,12 @@ export default function Header(props)
     const [showLoginUser, setShowLoginUser] = useState(false);
     const [showUserOptionsModal, setShowUserOptionsModal] = useState(false);
 
-    function ConfirmRegisterModal() { //not working - cors problem
-        axios.post('http://localhost:8080/api/manager/registernewmanager', {
-            firstName: 'Fred',
-            lastName: 'Flintstone',
-            email: "fred.flint@abadaba.com",
-            password: "vilma"
+    function ConfirmRegisterModal() { 
+        axios.post('/api/manager/registernewmanager', {
+            firstName: 'Herokutest2',
+            lastName: 'Herokulastname2',
+            email: "Herokuemail2",
+            password: "1234"
           })
           .then(function (response) {
             console.log(response);

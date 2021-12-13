@@ -30,7 +30,7 @@ function App(props) {
   const [data, setRestaurant] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/restaurant/all')
+        axios.get('/api/restaurant/all')
             .then(result => setRestaurant(result.data));
             console.log(data);
             }, []);
@@ -43,7 +43,7 @@ function App(props) {
     const [data2, setConsumer] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/consumer/all')
+        axios.get('/api/consumer/all')
             .then(result => setConsumer(result.data));
             console.log(data);
             }, []);
@@ -56,7 +56,7 @@ function App(props) {
     const [data3, setManager] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/manager/all')
+        axios.get('/api/manager/all')
             .then(result => setManager(result.data));
             console.log(data);
             }, []);
