@@ -25,7 +25,7 @@ export default function TestComponent() {
     const [data, setRestaurant] = useState([]);
     
     useEffect(() => {
-        axios.get('http://localhost:8080/api/restaurant/all')
+        axios.get('/api/restaurant/all')
             .then(result => setRestaurant(result.data));
         console.log(data);
             }, []);
