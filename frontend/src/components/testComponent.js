@@ -1,10 +1,12 @@
 //import http from "../http-common";
+
 import axios from "axios";
 import { useEffect, useState } from "react";
 
 export default function TestComponent() {
 
     
+
     
     function ConfirmRegisterModal() { 
         axios.post('/api/manager/registernewmanager', {
@@ -28,6 +30,7 @@ export default function TestComponent() {
         axios.get('/api/restaurant/all')
             .then(result => setRestaurant(result.data));
         //(data);
+
             }, []);
     
 
@@ -35,6 +38,7 @@ export default function TestComponent() {
 
     return(
         <div>
+
             Teste
             <div>
                 {data.map(item => {
@@ -48,6 +52,20 @@ export default function TestComponent() {
                 })}
             </div>
         <button onClick={ConfirmRegisterModal}>Post</button>
+
+            <tbody>
+                {data.map(item => {
+                    return <tr key={item.restaurantId}>
+                    <td>{item.restaurantName}</td>
+                    <td>{item.restaurantAddress}</td>
+                    <td>{item.operatingHours}</td>
+                    <td>{item.restaurantType}</td>
+                    <td>{item.priceLevel}</td>
+                    </tr>
+                })}
+            </tbody>
+            
+
         </div>
     );
 

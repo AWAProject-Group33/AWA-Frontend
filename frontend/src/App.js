@@ -19,14 +19,18 @@ import UserProfile from './components/userProfile';
 import OwnerProfile from './components/OwnerProfile';
 import {v4 as uuidv4} from "uuid";
 import axios from 'axios';
+
 import TestComponent from './components/testComponent';
 import Farewell from './components/Farewll';
+
 
 //import restaurantData from './data.json'
 
 
 
+
 function App(props) {
+
 
   const [data, setRestaurant] = useState([]);
 
@@ -118,15 +122,18 @@ localStorage.removeItem('type');
       
       {/*searchClicked ?  <SearchView /> : <Content onSearch={SearchClick} />  */ }
         <Routes >
+
           <Route path="/" element={<Content funcBarvalue={pull_BarValue}/>} />
           <Route path="/restaurants" element={<SearchView Value={BarValue} restaurants={restaurantsData}/>} />
           <Route path="/restaurants/:id" element={<PlaceView cartsItems={cartItemsData} carts={cartData} restaurants={restaurantsData}/>} />
+
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/ourteam" element={<OurTeam />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/news" element={<News />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/restaurants/:id"  />
           <Route path="/orderconfirmation" element={<OrderConfirmation />} />
           <Route path="/orderconfirmation/end" element={<Farewell />} />
           <Route path="/consumer/:id" element={<UserProfile restaurants={restaurantsData} consumers={consumerData} managers={managerData}/>} />
