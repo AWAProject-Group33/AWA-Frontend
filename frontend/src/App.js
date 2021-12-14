@@ -32,65 +32,65 @@ function App(props) {
     useEffect(() => {
         axios.get('http://localhost:8080/api/restaurant/all')
             .then(result => setRestaurant(result.data));
-            console.log(data);
+            //(data);
             }, []);
 
     const restaurantsData = data.map (restaurant => {
       return {...restaurant, id: uuidv4()}
     })
-    //console.log(restaurantsData);
+    ////(restaurantsData);
   
     const [data2, setConsumer] = useState([]);
 
     useEffect(() => {
         axios.get('http://localhost:8080/api/consumer/all')
             .then(result => setConsumer(result.data));
-            console.log(data);
+            //(data);
             }, []);
 
     const consumerData = data2.map (consumer => {
       return {...consumer, idU: uuidv4(), type: "consumer"}
     })
-    //console.log(consumerData);
+    ////(consumerData);
 
     const [data3, setManager] = useState([]);
 
     useEffect(() => {
         axios.get('http://localhost:8080/api/manager/all')
             .then(result => setManager(result.data));
-            console.log(data);
+            //(data);
             }, []);
 
     const managerData = data3.map (manager => {
       return {...manager, idU: uuidv4(), type: "manager"}
     })
-    //console.log(managerData);
+    ////(managerData);
 
     const [data4, setCart] = useState([]);
 
     useEffect(() => {
       axios.get('http://localhost:8080/api/shoppingcart/all')
           .then(result => setCart(result.data));
-          console.log(data);
+          //(data);
           }, []);
 
   const cartData = data4.map (manager => {
     return {...manager, idU: uuidv4()}
   })
-  console.log(cartData);
+  ////(cartData);
 
   const [data5, setCartItems] = useState([]);
 
   useEffect(() => {
     axios.get('http://localhost:8080/api/cartitems/all')
         .then(result => setCartItems(result.data));
-        console.log(data);
+        //(data);
         }, []);
 
 const cartItemsData = data5.map (items => {
   return {...items}
 })
-console.log(cartItemsData);
+////(cartItemsData);
 
 
 var BarValue = "";
@@ -98,11 +98,11 @@ var BarValue = "";
 
 const pull_BarValue = (BarValueData) => {
   BarValue = BarValueData;
-  console.log(BarValue);
+  //(BarValue);
   return BarValue;
 }
 
-console.log(pull_BarValue);
+//(pull_BarValue);
 
 localStorage.removeItem('id');
 localStorage.removeItem('managerId');

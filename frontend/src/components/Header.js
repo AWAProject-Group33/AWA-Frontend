@@ -26,12 +26,12 @@ export default function Header(props)
             password: password
           })
           .then(function (response) {
-            console.log(response);
+            //(response);
           })
           .catch(function (error) {
-            console.log(error);
+            //(error);
           });
-        console.log("Register posted");
+          window.location.reload(true);
     }
 
     /*const [data, setConsumer] = useState([]);
@@ -68,7 +68,7 @@ export default function Header(props)
     function RegisterBtn() {
         setShowRegisterModal(true);
         setShowBackDrop(true);
-        console.log("Register clicked");
+        //("Register clicked");
     }
 
     
@@ -76,7 +76,7 @@ export default function Header(props)
     function LoginBtn() {
         setShowLoginModal(true);
         setShowBackDrop(true);
-        console.log("Login clicked");
+        //("Login clicked");
     }
 
     function LoggedBtn() {
@@ -91,9 +91,9 @@ export default function Header(props)
 
     function ConfirmModal() {
         const consumer = arrayUsers.find(consumer => consumer.email == user);
-        console.log(arrayUsers);
+        //(arrayUsers);
         if (consumer == null) {
-            console.log(consumer);
+            //(consumer);
             return 0;
         }    
         else {
@@ -147,7 +147,7 @@ export default function Header(props)
       }
 
      
-     console.log("Ignore "+ showBackDrop); 
+     //("Ignore "+ showBackDrop); 
     return(
         <div className={styles.container}>
                 <div className={styles.containerA}>

@@ -15,14 +15,14 @@ export default function UserProfile(props) {
     useEffect(() => {
         axios.get('http://localhost:8080/api/orderhistory')
             .then(result => setOrder(result.data));
-            console.log(data);
+            //(data);
             }, []);
 
     const OrderData = data.map (order => {
       return {...order, id: uuidv4()}
     })
 
-    console.log(OrderData);
+    //(OrderData);
 
     function seeOrderHistory() {
         setSeeOrderHistory(true);
@@ -37,11 +37,11 @@ export default function UserProfile(props) {
     const arrayUsers = props.managers.concat(props.consumers);
     const consumer = arrayUsers.find(consumer => consumer.idU === localStorage.getItem('id'));
         if (consumer == null) {
-            console.log("Not found.");
+            //("Not found.");
             return 0;
         }    
         else {
-            console.log(consumer);
+            //(consumer);
         }
     return (
         <div style={{display: "flex",justifyContent: "start"}}>

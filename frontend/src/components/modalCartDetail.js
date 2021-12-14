@@ -5,18 +5,18 @@ export default function FormModal(props) {
 
   const cart = props.carts.find(cart => cart.consumerId == localStorage.getItem('managerId'));
   if (cart == null) {
-      console.log("Not found.");
+      //("Not found.");
   }    
   else {
-      console.log(cart.shoppingCartId);
+      //(cart.shoppingCartId);
   }
 
   const cartItem = props.cartsItems.find(cartItem => cartItem.shoppingCartId == cart.shoppingCartId);
   if (cart == null) {
-    console.log("Not found.");
+    //("Not found.");
   }    
   else {
-    console.log(cartItem);
+    //(cartItem);
   }
 
   function CancelButton() {
@@ -24,17 +24,17 @@ export default function FormModal(props) {
   } 
     
   function CardOwnername(val) {
-    console.log(val.target.value);
+    //(val.target.value);
   }
 
 
   function CreditCardOwnername(val) {
-    console.log(val.target.value);
+    //(val.target.value);
   }
 
 
   function OwnerAddress(val) {
-    console.log(val.target.value);
+    //(val.target.value);
   }
 
 

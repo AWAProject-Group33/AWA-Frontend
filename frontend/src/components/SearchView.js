@@ -10,12 +10,12 @@ import {Link} from "react-router-dom";
 
 export default function SearchView(props) {
 
-    console.log(props.Value);
+    //(props.Value);
 
     function Filtering(val) {
-        console.log(val.target.value)
+        //(val.target.value)
         //const filtered = props.restaurants.filter(val.target.value);
-        //console.log(Filtering);
+        ////(Filtering);
     }  
     return(
     <div>

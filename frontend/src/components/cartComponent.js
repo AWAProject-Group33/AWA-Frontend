@@ -21,23 +21,23 @@ export default function CartComponent(props)
     setShowCartDetail(false);
   }
 
-  console.log("Ignore "+ showBackDrop);
-  console.log(props.carts);
+  //("Ignore "+ showBackDrop);
+  //(props.carts);
   const cart = props.carts.find(cart => cart.consumerId == localStorage.getItem('managerId'));
   if (cart == null) {
-      console.log("Not found.");
+      //("Not found.");
       return 0;
   }    
   else {
-      console.log(cart.shoppingCartId);
+      //(cart.shoppingCartId);
   }
 
   const cartItem = props.cartsItems.find(cartItem => cartItem.shoppingCartId == cart.shoppingCartId);
   if (cart == null) {
-    console.log("Not found.");
+    //("Not found.");
   }    
   else {
-    console.log(cartItem);
+    //(cartItem);
   }
 
   return (

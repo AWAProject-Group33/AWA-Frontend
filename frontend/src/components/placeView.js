@@ -11,7 +11,7 @@ export default function PlaceView(props) {
     }
 
     function PassInfo() {
-        console.log("passing");
+        //("passing");
     }
 
     return (

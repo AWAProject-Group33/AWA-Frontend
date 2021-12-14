@@ -8,7 +8,7 @@ export default function Content(props)
 
     function BarValue(val) {
         props.funcBarvalue(val.target.value);
-        console.log(val.target.value);
+        //(val.target.value);
     }
 
     return(
