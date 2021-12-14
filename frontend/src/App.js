@@ -69,7 +69,7 @@ function App(props) {
     const [data4, setCart] = useState([]);
 
     useEffect(() => {
-      axios.get('http://localhost:8080/api/shoppingcart/all')
+      axios.get('/api/shoppingcart/all')
           .then(result => setCart(result.data));
           console.log(data);
           }, []);
@@ -82,7 +82,7 @@ function App(props) {
   const [data5, setCartItems] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8080/api/cartitems/all')
+    axios.get('/api/cartitems/all')
         .then(result => setCartItems(result.data));
         console.log(data);
         }, []);

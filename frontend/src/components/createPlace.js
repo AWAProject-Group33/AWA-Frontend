@@ -10,7 +10,7 @@ export default function CreatePlace() {
 
 
     function CreateRestaurant() { 
-        axios.post('http://localhost:8080/api/restaurant/newrestaurant', {
+        axios.post('/api/restaurant/newrestaurant', {
             restaurantName: Resname,
             restaurantAddress: address,
             operatingHours: ophour,
