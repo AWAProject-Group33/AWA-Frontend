@@ -10,7 +10,7 @@ import axios from 'axios';
 
 export default function OwnerProfile(props) {
 
-    const [data, setOrder] = useState([]);
+    /*const [data, setOrder] = useState([]);
 
     useEffect(() => {
         axios.get('http://localhost:8080/api/orderhistory')
@@ -20,7 +20,7 @@ export default function OwnerProfile(props) {
 
     const OrderData = data.map (order => {
       return {...order, id: uuidv4()}
-    })
+    })*/
 
     //(OrderData);
 

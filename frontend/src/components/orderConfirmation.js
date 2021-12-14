@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 import img from './Daco.png'
 
 export default function OrderConfirmation() {
@@ -16,7 +18,7 @@ export default function OrderConfirmation() {
             <span>3</span>
             <span>4</span>
         </div>
-            <button>Order Delivered</button>
+            <Link to="/orderconfirmation/end"><button>Order Delivered</button></Link>
         </div>
     );
 }

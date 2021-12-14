@@ -20,6 +20,7 @@ import OwnerProfile from './components/OwnerProfile';
 import {v4 as uuidv4} from "uuid";
 import axios from 'axios';
 import TestComponent from './components/testComponent';
+import Farewell from './components/Farewll';
 
 //import restaurantData from './data.json'
 
@@ -127,6 +128,7 @@ localStorage.removeItem('type');
           <Route path="/news" element={<News />} />
           <Route path="/events" element={<Events />} />
           <Route path="/orderconfirmation" element={<OrderConfirmation />} />
+          <Route path="/orderconfirmation/end" element={<Farewell />} />
           <Route path="/consumer/:id" element={<UserProfile restaurants={restaurantsData} consumers={consumerData} managers={managerData}/>} />
           <Route path="/manager/:id" element={<OwnerProfile restaurants={restaurantsData} consumers={consumerData} managers={managerData}/>} />
           <Route path="/test" element={<TestComponent />} />
