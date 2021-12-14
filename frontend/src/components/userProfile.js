@@ -19,7 +19,7 @@ export default function UserProfile(props) {
     }
 
     const arrayUsers = props.managers.concat(props.consumers);
-    const consumer = arrayUsers.find(consumer => consumer.id === localStorage.getItem('id'));
+    const consumer = arrayUsers.find(consumer => consumer.idU === localStorage.getItem('id'));
         if (consumer == null) {
             console.log("Not found.");
             return 0;

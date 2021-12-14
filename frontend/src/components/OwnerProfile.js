@@ -43,7 +43,8 @@ export default function OwnerProfile(props) {
     }
 
     const arrayUsers = props.managers.concat(props.consumers);
-    const consumer = arrayUsers.find(consumer => consumer.id === localStorage.getItem('id'));
+    console.log(arrayUsers);
+    const consumer = arrayUsers.find(consumer => consumer.idU === localStorage.getItem('id'));
         if (consumer == null) {
             console.log("Not found.");
             return 0;
@@ -66,7 +67,7 @@ export default function OwnerProfile(props) {
             <div>
                 <h2>Welcome, {consumer.firstName}.</h2>
                 {createPlace ? <CreatePlace /> : null}
-                {addProductToPlace ? <AddProductToPlace />: null}
+                {addProductToPlace ? <AddProductToPlace restaurants={props.restaurants}/>: null}
                 {showReceiveOrderChange ?  <OrderStatusConfirm /> : null}
                 {showOrderHistory ?  <OwnerOrderHistory /> : null}
             </div>
