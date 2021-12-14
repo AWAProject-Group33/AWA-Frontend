@@ -20,6 +20,7 @@ import OwnerProfile from './components/OwnerProfile';
 import {v4 as uuidv4} from "uuid";
 import axios from 'axios';
 import TestComponent from './components/testComponent';
+import Farewell from './components/Farewll';
 
 //import restaurantData from './data.json'
 
@@ -32,76 +33,93 @@ function App(props) {
     useEffect(() => {
         axios.get('/api/restaurant/all')
             .then(result => setRestaurant(result.data));
-            console.log(data);
+            //(data);
             }, []);
 
     const restaurantsData = data.map (restaurant => {
       return {...restaurant, id: uuidv4()}
     })
-    //console.log(restaurantsData);
+    ////(restaurantsData);
   
     const [data2, setConsumer] = useState([]);
 
     useEffect(() => {
         axios.get('/api/consumer/all')
             .then(result => setConsumer(result.data));
-            console.log(data);
+            //(data);
             }, []);
 
     const consumerData = data2.map (consumer => {
       return {...consumer, idU: uuidv4(), type: "consumer"}
     })
-    //console.log(consumerData);
+    ////(consumerData);
 
     const [data3, setManager] = useState([]);
 
     useEffect(() => {
         axios.get('/api/manager/all')
             .then(result => setManager(result.data));
-            console.log(data);
+            //(data);
             }, []);
 
     const managerData = data3.map (manager => {
       return {...manager, idU: uuidv4(), type: "manager"}
     })
-    //console.log(managerData);
+    ////(managerData);
 
     const [data4, setCart] = useState([]);
 
     useEffect(() => {
       axios.get('/api/shoppingcart/all')
           .then(result => setCart(result.data));
-          console.log(data);
+          //(data);
           }, []);
 
   const cartData = data4.map (manager => {
     return {...manager, idU: uuidv4()}
   })
-  console.log(cartData);
+  ////(cartData);
 
   const [data5, setCartItems] = useState([]);
 
   useEffect(() => {
     axios.get('/api/cartitems/all')
         .then(result => setCartItems(result.data));
-        console.log(data);
+        //(data);
         }, []);
 
 const cartItemsData = data5.map (items => {
   return {...items}
 })
-console.log(cartItemsData);
+////(cartItemsData);
+
+
+var BarValue = "";
+
+
+const pull_BarValue = (BarValueData) => {
+  BarValue = BarValueData;
+  //(BarValue);
+  return BarValue;
+}
+
+//(pull_BarValue);
+
+localStorage.removeItem('id');
+localStorage.removeItem('managerId');
+localStorage.removeItem('name');
+localStorage.removeItem('type');
 
 
   return (
   <BrowserRouter>
     <div className="App">
-      <Header consumers={consumerData} managers={managerData}/>
+      <Header cartsItems={cartItemsData} carts={cartData} consumers={consumerData} managers={managerData}/>
       
       {/*searchClicked ?  <SearchView /> : <Content onSearch={SearchClick} />  */ }
         <Routes >
-          <Route path="/" element={<Content />} />
-          <Route path="/restaurants" element={<SearchView restaurants={restaurantsData}/>} />
+          <Route path="/" element={<Content funcBarvalue={pull_BarValue}/>} />
+          <Route path="/restaurants" element={<SearchView Value={BarValue} restaurants={restaurantsData}/>} />
           <Route path="/restaurants/:id" element={<PlaceView cartsItems={cartItemsData} carts={cartData} restaurants={restaurantsData}/>} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/careers" element={<Careers />} />
@@ -110,6 +128,7 @@ console.log(cartItemsData);
           <Route path="/news" element={<News />} />
           <Route path="/events" element={<Events />} />
           <Route path="/orderconfirmation" element={<OrderConfirmation />} />
+          <Route path="/orderconfirmation/end" element={<Farewell />} />
           <Route path="/consumer/:id" element={<UserProfile restaurants={restaurantsData} consumers={consumerData} managers={managerData}/>} />
           <Route path="/manager/:id" element={<OwnerProfile restaurants={restaurantsData} consumers={consumerData} managers={managerData}/>} />
           <Route path="/test" element={<TestComponent />} />

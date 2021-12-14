@@ -14,12 +14,12 @@ export default function TestComponent() {
             password: "1234"
           })
           .then(function (response) {
-            console.log(response);
+            //(response);
           })
           .catch(function (error) {
-            console.log(error);
+            //(error);
           });
-        console.log(data);
+        //(data);
     }
     
     const [data, setRestaurant] = useState([]);
@@ -27,7 +27,7 @@ export default function TestComponent() {
     useEffect(() => {
         axios.get('/api/restaurant/all')
             .then(result => setRestaurant(result.data));
-        console.log(data);
+        //(data);
             }, []);
     
 

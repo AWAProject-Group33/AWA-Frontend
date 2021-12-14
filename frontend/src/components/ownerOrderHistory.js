@@ -8,7 +8,7 @@ export default function OrderHistory() {
     useEffect(() => {
         axios.get('http://localhost:8080/api/restaurant/all')
             .then(result => setOrderHistory(result.data));
-            console.log(data);
+            //(data);
             }, []);*/
 
     return(

@@ -18,38 +18,38 @@ export default function CreatePlace() {
             priceLevel: price   
           })
           .then(function (response) {
-            console.log(response);
+            //(response);
           })
           .catch(function (error) {
-            console.log(error);
+            //(error);
           });
-        console.log("Register posted");
+        //("Register posted");
     }
 
     function GetName(val) {
         Resname = val.target.value;
-        console.log(Resname);
+        //(Resname);
     }
 
     function GetAdress(val) {
         address = val.target.value;
-        console.log(address);
+        //(address);
     }
 
     function GetOpHour(val) {
         ophour = val.target.value;
-        console.log(ophour);
+        //(ophour);
     }
 
     function GetPrice(val) {
         price = val.target.value;
-        console.log(price);
+        //(price);
     }
 
     
     function GetType(val) {
         type = val.target.value;
-        console.log(type);
+        //(type);
     }
 
     

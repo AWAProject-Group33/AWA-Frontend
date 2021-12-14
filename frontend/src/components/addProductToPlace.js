@@ -5,11 +5,11 @@ export default function addProductToPlace(props) {
 
     const restaurant = props.restaurants.find(restaurant => restaurant.managerId === localStorage.getItem('managerId'));
         if (restaurant == null) {
-            console.log("Not found.");
+            //("Not found.");
             return 0;
         }    
         else {
-            console.log(restaurant);
+            //(restaurant);
         }
 
     return (

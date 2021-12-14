@@ -1,12 +1,29 @@
 
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Style from './Header.module.css';
 import CreatePlace from './createPlace';
 import AddProductToPlace from './addProductToPlace';
 import OwnerOrderHistory from './ownerOrderHistory';
 import OrderStatusConfirm from './orderStatusConfirm';
+import {v4 as uuidv4} from "uuid";
+import axios from 'axios';
 
 export default function OwnerProfile(props) {
+
+    /*const [data, setOrder] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:8080/api/orderhistory')
+            .then(result => setOrder(result.data));
+            //(data);
+            }, []);
+
+    const OrderData = data.map (order => {
+      return {...order, id: uuidv4()}
+    })*/
+
+    //(OrderData);
+
 
     const [createPlace, setCreatePlace] = useState(false);
     const [addProductToPlace, setAddProductToPlace] = useState(false);
@@ -43,15 +60,17 @@ export default function OwnerProfile(props) {
     }
 
     const arrayUsers = props.managers.concat(props.consumers);
-    console.log(arrayUsers);
+    //(arrayUsers);
     const consumer = arrayUsers.find(consumer => consumer.idU === localStorage.getItem('id'));
         if (consumer == null) {
-            console.log("Not found.");
+            //("Not found.");
             return 0;
         }    
         else {
-            console.log(consumer);
+            //(consumer);
         }
+
+        
 
     return (
         <div style={{display: "flex",justifyContent: "start"}}>
