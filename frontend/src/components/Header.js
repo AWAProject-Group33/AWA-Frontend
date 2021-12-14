@@ -18,12 +18,12 @@ export default function Header(props)
     const [showLoginUser, setShowLoginUser] = useState(false);
     const [showUserOptionsModal, setShowUserOptionsModal] = useState(false);
 
-    function ConfirmRegisterModal() { 
-        axios.post('/api/manager/registernewmanager', {
-            firstName: 'Herokutest2',
-            lastName: 'Herokulastname2',
-            email: "Herokuemail2",
-            password: "1234"
+    function ConfirmRegisterModal() { //not working - cors problem
+        axios.post('/api/'+localStorage.getItem('newType')+"/"+'registernew'+localStorage.getItem('newType'), {
+            firstName: name,
+            lastName: surname,
+            email: email,
+            password: password
           })
           .then(function (response) {
             console.log(response);
@@ -60,6 +60,10 @@ export default function Header(props)
     
     var user;
     var pass;
+    var name;
+    var surname;
+    var email;
+    var password;
 
     function RegisterBtn() {
         setShowRegisterModal(true);
@@ -86,20 +90,20 @@ export default function Header(props)
     }
 
     function ConfirmModal() {
-        const consumer = arrayUsers.find(consumer => consumer.email === user);
-        //const managermatch = manager.find(managermatch => managermatch.email === user);
-        if (consumer === null) {
-            console.log("Not found.");
+        const consumer = arrayUsers.find(consumer => consumer.email == user);
+        console.log(arrayUsers);
+        if (consumer == null) {
+            console.log(consumer);
             return 0;
         }    
         else {
-            if (consumer.password === pass) {
+            if (consumer.password == pass) {
                 setShowLoginUser(true);
                 setShowLoginModal(false);
                 localStorage.setItem('name', consumer.firstName);
-                localStorage.setItem('id', consumer.id);
-                localStorage.setItem('type', consumer.type); 
-                console.log(localStorage.getItem('type'));
+                localStorage.setItem('id', consumer.idU);
+                localStorage.setItem('managerId', consumer.id);
+                localStorage.setItem('type', consumer.type);
             }
         }
     }
@@ -111,6 +115,9 @@ export default function Header(props)
     function LogOutClick() {
         setShowLoginUser(false);
         setShowUserOptionsModal(false);
+        localStorage.removeItem('id');
+        localStorage.removeItem('name');
+        localStorage.removeItem('type');
     }
 
     function pull_user(userData){
@@ -119,6 +126,22 @@ export default function Header(props)
 
       const pull_pass = (passData) => {
         pass = passData;
+      }
+
+      const pull_name = (nameData) => {
+          name = nameData;
+      }
+
+      const pull_SurName = (surNameData) => {
+          surname = surNameData;
+      }
+
+      const pull_Email = (emailData) => {
+          email = emailData;
+      }
+
+      const pull_Password = (passwordData) => {
+          password = passwordData;
       }
 
      
@@ -133,7 +156,7 @@ export default function Header(props)
                     {showLoginUser ? <span className={styles.HeaderTitles}><button onClick={LoggedBtn}>Logged</button></span>
                     : <span className={styles.HeaderTitles}><button onClick={LoginBtn}>Login </button></span>}
                 </div>
-        {showRegisterModal ? <Modal onCancel={CloseModal} onConfirmRegister={ConfirmRegisterModal}/>: null}
+        {showRegisterModal ? <Modal funcName={pull_name} funcSurName={pull_SurName} funcEmail={pull_Email} funcPassword={pull_Password} onCancel={CloseModal} onConfirmRegister={ConfirmRegisterModal}/>: null}
         {showRegisterModal ? <Backdrop onClick={CloseModal}/>: null}
         {showLoginModal && <ModalLogin  funcUser={pull_user} funcPass={pull_pass} onCancel={CloseModal} onConfirm={ConfirmModal}/> /*do the same thing as above*/}
         {showLoginModal && <Backdrop onClick={CloseModal}/>}

@@ -28,7 +28,7 @@ export default function PlaceView(props) {
                     <MenuComponent foodType="Deserts" product="Tiramissú" price="$9,00"/>       
                 </div>
                 <div style={{padding: '20px', width: '29%', paddingTop: "83px"}}>
-                    <CartComponent /> 
+                    <CartComponent cartItems={props.cartsItems} carts={props.carts}/> 
                 </div>
             </div>
       </div>

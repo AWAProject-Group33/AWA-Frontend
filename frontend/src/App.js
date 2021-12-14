@@ -49,7 +49,7 @@ function App(props) {
             }, []);
 
     const consumerData = data2.map (consumer => {
-      return {...consumer, id: uuidv4(), type: "consumer"}
+      return {...consumer, idU: uuidv4(), type: "consumer"}
     })
     //console.log(consumerData);
 
@@ -62,20 +62,47 @@ function App(props) {
             }, []);
 
     const managerData = data3.map (manager => {
-      return {...manager, id: uuidv4(), type: "manager"}
+      return {...manager, idU: uuidv4(), type: "manager"}
     })
     //console.log(managerData);
+
+    const [data4, setCart] = useState([]);
+
+    useEffect(() => {
+      axios.get('http://localhost:8080/api/shoppingcart/all')
+          .then(result => setCart(result.data));
+          console.log(data);
+          }, []);
+
+  const cartData = data4.map (manager => {
+    return {...manager, idU: uuidv4()}
+  })
+  console.log(cartData);
+
+  const [data5, setCartItems] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:8080/api/cartitems/all')
+        .then(result => setCartItems(result.data));
+        console.log(data);
+        }, []);
+
+const cartItemsData = data5.map (items => {
+  return {...items}
+})
+console.log(cartItemsData);
 
 
   return (
   <BrowserRouter>
     <div className="App">
       <Header consumers={consumerData} managers={managerData}/>
+      
       {/*searchClicked ?  <SearchView /> : <Content onSearch={SearchClick} />  */ }
         <Routes >
           <Route path="/" element={<Content />} />
           <Route path="/restaurants" element={<SearchView restaurants={restaurantsData}/>} />
-          <Route path="/restaurants/:id" element={<PlaceView restaurants={restaurantsData}/>} />
+          <Route path="/restaurants/:id" element={<PlaceView cartsItems={cartItemsData} carts={cartData} restaurants={restaurantsData}/>} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/ourteam" element={<OurTeam />} />
@@ -83,8 +110,8 @@ function App(props) {
           <Route path="/news" element={<News />} />
           <Route path="/events" element={<Events />} />
           <Route path="/orderconfirmation" element={<OrderConfirmation />} />
-          <Route path="/consumer/:id" element={<UserProfile consumers={consumerData} managers={managerData}/>} />
-          <Route path="/manager/:id" element={<OwnerProfile consumers={consumerData} managers={managerData}/>} />
+          <Route path="/consumer/:id" element={<UserProfile restaurants={restaurantsData} consumers={consumerData} managers={managerData}/>} />
+          <Route path="/manager/:id" element={<OwnerProfile restaurants={restaurantsData} consumers={consumerData} managers={managerData}/>} />
           <Route path="/test" element={<TestComponent />} />
         </Routes>
       <Bottom />
