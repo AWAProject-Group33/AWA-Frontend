@@ -18,7 +18,7 @@ export default function Header(props)
     const [showLoginUser, setShowLoginUser] = useState(false);
     const [showUserOptionsModal, setShowUserOptionsModal] = useState(false);
 
-    function ConfirmRegisterModal() { //not working - cors problem
+    function ConfirmRegisterModal() { 
         axios.post('/api/'+localStorage.getItem('newType')+"/"+'registernew'+localStorage.getItem('newType'), {
             firstName: name,
             lastName: surname,
