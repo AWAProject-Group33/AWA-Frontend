@@ -1,10 +1,23 @@
-export default function addProductToPlace() {
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
+
+export default function addProductToPlace(props) {
+
+    const restaurant = props.restaurants.find(restaurant => restaurant.managerId === localStorage.getItem('managerId'));
+        if (restaurant == null) {
+            //("Not found.");
+            return 0;
+        }    
+        else {
+            //(restaurant);
+        }
+
     return (
     <div>
         
         <div style={{display: "table-caption", padding: "50px"}}>
             <select>
-                <option value="Restaurant">Luigi´s</option>
+                <option value="Restaurant">{restaurant.restaurantName}</option>
             </select>
             <p>image</p>
             

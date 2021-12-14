@@ -1,18 +1,26 @@
 import React from 'react';
 import styles from './SearchView.module.css';
 import RestaurantBox from './RestaurantBox';
+//import axios from "axios";
+//import { useEffect, useState } from "react";
 import {Link} from "react-router-dom";
 
-    
+  
+
+
 export default function SearchView(props) {
 
+    //(props.Value);
 
-
-
+    function Filtering(val) {
+        //(val.target.value)
+        //const filtered = props.restaurants.filter(val.target.value);
+        ////(Filtering);
+    }  
     return(
     <div>
             <div>
-            <input  type="text" placeholder="Type an address, a place or a will."/>
+            <input  onChange={Filtering} type="text" placeholder="Type an address, a place or a will." value=""/>
             </div>
     <div className={styles.container}>     
         <div className={styles.searchOptions}>
@@ -65,9 +73,20 @@ export default function SearchView(props) {
             </span>
         </div>
         <div className={styles.restaurantBoxes}>
-            { props.contacts.map(contact => <Link to={contact.id} className={styles.box}>
+            { /*props.contacts.map(contact => <Link to={contact.id} className={styles.box}>
                 <RestaurantBox name={contact.name} cuisine={contact.cuisine} star={contact.star} price={contact.price} distance={contact.distance} method={contact.method} type={contact.type}/>
-            </Link>)}
+            </Link>)*/
+            props.restaurants.map(item => {
+                return (
+                <Link to={item.id} className={styles.box}>
+                    <RestaurantBox restaurants={props.restaurants} name={item.restaurantName} cuisine={item.operatingHours} star={item.restaurantId} 
+                    distance={item.restaurantAddress} price={item.priceLevel}  type={item.restaurantType}/>
+                </Link>
+                )
+                
+                
+            })
+            }
         </div>
     </div>
     </div>

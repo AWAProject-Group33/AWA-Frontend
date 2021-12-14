@@ -13,22 +13,22 @@ export default function Content()
         </div>
         <div>
             <h3>CERTIFIED</h3>
-            <img style={{paddingTop: "10px"}}src={seal} />
+            <img alt="Certification" style={{paddingTop: "10px"}}src={seal} />
         </div>
         <div>
-            <h3>NAVIGATE</h3>
-                <spam className={styles.navigateContainer}>
-                    <lu>
+            <h3 style={{marginLeft: "40px", marginBottom: "0px"}}>NAVIGATE</h3>
+                <span className={styles.navigateContainer}>
+                    <ul style={{marginTop: "0px"}}>
                         <Link to="/aboutus"><p>About Us</p></Link>
                         <Link to="/ourteam"><p>Our Team</p></Link>
                         <Link to="/contactus"><p>Contact</p></Link>
-                    </lu>
-                    <lu>
+                    </ul>
+                    <ul style={{marginTop: "0px", marginBottom: "0px"}}>
                         <Link to="/careers"><p>Careers</p></Link>
                         <Link to="/news"><p>News</p></Link>
                         <Link to="/events"><p>Events</p></Link>
-                    </lu>
-                </spam>
+                    </ul>
+                </span>
         </div>
     </div>
     );

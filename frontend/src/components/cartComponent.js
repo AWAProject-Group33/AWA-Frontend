@@ -3,7 +3,7 @@ import ModalCartDetail from './modalCartDetail';
 import Backdrop from './BackDrop';
 import React, {useState} from 'react';
 
-export default function CartComponent() 
+export default function CartComponent(props) 
 {
   const [showCartDetail, setShowCartDetail] = useState(false)
   const [showBackDrop, setShowBackDrop] = useState(false);
@@ -20,15 +20,41 @@ export default function CartComponent()
   function CancelModal() {
     setShowCartDetail(false);
   }
+
+  //("Ignore "+ showBackDrop);
+  //(props.carts);
+  const cart = props.carts.find(cart => cart.consumerId == localStorage.getItem('managerId'));
+  if (cart == null) {
+      //("Not found.");
+      return 0;
+  }    
+  else {
+      //(cart.shoppingCartId);
+  }
+
+  const cartItem = props.cartsItems.find(cartItem => cartItem.shoppingCartId == cart.shoppingCartId);
+  if (cart == null) {
+    //("Not found.");
+  }    
+  else {
+    //(cartItem);
+  }
+
   return (
     <div className={styles.Container}>
 
-      {showCartDetail ? <ModalCartDetail onClick={CancelModal}/> : null }
+      {showCartDetail ? <ModalCartDetail cartsItems={props.cartsItems} carts={props.carts} onClick={CancelModal}/> : null }
       {showCartDetail ? <Backdrop onClick={CloseModal}/>: null}
       <h3>SHOPPING CART</h3>
-      <spam style={{paddingLeft: "5px"}}>
+      <div style={{display: 'grid'}}>
+      <span>{cartItem.cartItemsId}</span>
+      <span>{cartItem.productId}</span>
+      <span>{cartItem.shoppingCartId}</span>
+      <span>{cartItem.quantity}</span>
+      </div>
+      <span style={{paddingLeft: "5px"}}>
           <button onClick={ShowDetails}>Details and Payment</button>
-      </spam>
+      </span>
     </div>
     )
       

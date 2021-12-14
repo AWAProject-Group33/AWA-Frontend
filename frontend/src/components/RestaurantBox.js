@@ -1,13 +1,14 @@
 import styles from './SearchView.module.css';
 import React from 'react';
+//import {Link} from "react-router-dom";
 
 
 export default function RestaurantBox(props) {
 
-    return (
-        
+
+    return (      
             <div className={styles.restaurantBox}>
-                <img style={{width: '100px', height: '100px', paddingTop: "20px"}}/>
+                <img alt="restImage" style={{width: '100px', height: '100px', paddingTop: "20px"}}/>
                 <h2>{props.name}</h2>
                 <p>{props.cuisine}</p>
                 <p>{props.star}</p>
@@ -15,7 +16,6 @@ export default function RestaurantBox(props) {
                 <p>{props.distance}</p>
                 <p>{props.method}</p>
                 <p>{props.type}</p>
-            </div>
-        
+            </div>   
     );
 }
