@@ -93,15 +93,32 @@ const cartItemsData = data5.map (items => {
 console.log(cartItemsData);
 
 
+var BarValue = "";
+
+
+const pull_BarValue = (BarValueData) => {
+  BarValue = BarValueData;
+  console.log(BarValue);
+  return BarValue;
+}
+
+console.log(pull_BarValue);
+
+localStorage.removeItem('id');
+localStorage.removeItem('managerId');
+localStorage.removeItem('name');
+localStorage.removeItem('type');
+
+
   return (
   <BrowserRouter>
     <div className="App">
-      <Header consumers={consumerData} managers={managerData}/>
+      <Header cartsItems={cartItemsData} carts={cartData} consumers={consumerData} managers={managerData}/>
       
       {/*searchClicked ?  <SearchView /> : <Content onSearch={SearchClick} />  */ }
         <Routes >
-          <Route path="/" element={<Content />} />
-          <Route path="/restaurants" element={<SearchView restaurants={restaurantsData}/>} />
+          <Route path="/" element={<Content funcBarvalue={pull_BarValue}/>} />
+          <Route path="/restaurants" element={<SearchView Value={BarValue} restaurants={restaurantsData}/>} />
           <Route path="/restaurants/:id" element={<PlaceView cartsItems={cartItemsData} carts={cartData} restaurants={restaurantsData}/>} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/careers" element={<Careers />} />

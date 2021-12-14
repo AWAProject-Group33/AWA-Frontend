@@ -26,12 +26,13 @@ export default function CartComponent(props)
   const cart = props.carts.find(cart => cart.consumerId == localStorage.getItem('managerId'));
   if (cart == null) {
       console.log("Not found.");
+      return 0;
   }    
   else {
       console.log(cart.shoppingCartId);
   }
 
-  const cartItem = props.cartItems.find(cartItem => cartItem.shoppingCartId == cart.shoppingCartId);
+  const cartItem = props.cartsItems.find(cartItem => cartItem.shoppingCartId == cart.shoppingCartId);
   if (cart == null) {
     console.log("Not found.");
   }    
@@ -42,7 +43,7 @@ export default function CartComponent(props)
   return (
     <div className={styles.Container}>
 
-      {showCartDetail ? <ModalCartDetail onClick={CancelModal}/> : null }
+      {showCartDetail ? <ModalCartDetail cartsItems={props.cartsItems} carts={props.carts} onClick={CancelModal}/> : null }
       {showCartDetail ? <Backdrop onClick={CloseModal}/>: null}
       <h3>SHOPPING CART</h3>
       <div style={{display: 'grid'}}>

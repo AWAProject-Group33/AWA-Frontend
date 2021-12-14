@@ -5,13 +5,22 @@ import RestaurantBox from './RestaurantBox';
 //import { useEffect, useState } from "react";
 import {Link} from "react-router-dom";
 
-    
+  
+
+
 export default function SearchView(props) {
 
+    console.log(props.Value);
+
+    function Filtering(val) {
+        console.log(val.target.value)
+        //const filtered = props.restaurants.filter(val.target.value);
+        //console.log(Filtering);
+    }  
     return(
     <div>
             <div>
-            <input  type="text" placeholder="Type an address, a place or a will."/>
+            <input  onChange={Filtering} type="text" placeholder="Type an address, a place or a will." value=""/>
             </div>
     <div className={styles.container}>     
         <div className={styles.searchOptions}>

@@ -118,6 +118,8 @@ export default function Header(props)
         localStorage.removeItem('id');
         localStorage.removeItem('name');
         localStorage.removeItem('type');
+        localStorage.removeItem('managerId');
+        localStorage.removeItem('newType');
     }
 
     function pull_user(userData){
@@ -160,7 +162,7 @@ export default function Header(props)
         {showRegisterModal ? <Backdrop onClick={CloseModal}/>: null}
         {showLoginModal && <ModalLogin  funcUser={pull_user} funcPass={pull_pass} onCancel={CloseModal} onConfirm={ConfirmModal}/> /*do the same thing as above*/}
         {showLoginModal && <Backdrop onClick={CloseModal}/>}
-        {showUserOptionsModal ? <ModalUserOptions userData={arrayUsers} onProfileClick={ProfileClick} onLogOutClick={LogOutClick}/> : null}
+        {showUserOptionsModal ? <ModalUserOptions cartsItems={props.cartsItems} carts={props.carts} userData={arrayUsers} onProfileClick={ProfileClick} onLogOutClick={LogOutClick}/> : null}
         {showUserOptionsModal ? <Backdrop onClick={CloseModal}/>: null}
         </div>
     )

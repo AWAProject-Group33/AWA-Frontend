@@ -10,7 +10,9 @@ export default function PlaceView(props) {
         return 0;
     }
 
-    
+    function PassInfo() {
+        console.log("passing");
+    }
 
     return (
       <div>
@@ -20,15 +22,15 @@ export default function PlaceView(props) {
           </div>
           <div style={{display: 'flex', justifyContent: "space-around"}}>
                 <div style={{padding: '20px', width: '70%'}}>
-                    <MenuComponent foodType="Beverages" product="coke" price="$3,00"/>
-                    <MenuComponent foodType="Starters" product="Risotto" price="$8,00"/> 
-                    <MenuComponent foodType="Pasta" product="Pizza" price="$11,00"/> 
-                    <MenuComponent product="Lasagna" price="$15,00"/> 
-                    <MenuComponent product="Caneloni" price="$10,00"/>
-                    <MenuComponent foodType="Deserts" product="Tiramissú" price="$9,00"/>       
+                    <MenuComponent OnClick={PassInfo} foodType="Beverages" product="coke" price="$3,00"/>
+                    <MenuComponent OnClick={PassInfo} foodType="Starters" product="Risotto" price="$8,00"/> 
+                    <MenuComponent OnClick={PassInfo} foodType="Pasta" product="Pizza" price="$11,00"/> 
+                    <MenuComponent OnClick={PassInfo} product="Lasagna" price="$15,00"/> 
+                    <MenuComponent OnClick={PassInfo} product="Caneloni" price="$10,00"/>
+                    <MenuComponent OnClick={PassInfo} foodType="Deserts" product="Tiramissú" price="$9,00"/>       
                 </div>
                 <div style={{padding: '20px', width: '29%', paddingTop: "83px"}}>
-                    <CartComponent cartItems={props.cartsItems} carts={props.carts}/> 
+                    <CartComponent cartsItems={props.cartsItems} carts={props.carts}/> 
                 </div>
             </div>
       </div>

@@ -3,8 +3,14 @@ import styles from './content.module.css';
 import logo from './g1009-8.png';
 import {Link} from "react-router-dom";
     
-export default function Content() 
+export default function Content(props) 
 {
+
+    function BarValue(val) {
+        props.funcBarvalue(val.target.value);
+        console.log(val.target.value);
+    }
+
     return(
     <div className={styles.container} >
         <div className={styles.searchContainer} style={{ 
@@ -13,7 +19,7 @@ export default function Content()
             <h1>Want a fast-food? Search for nearby restaurants!</h1>
             <h1>Already know what you want? Use the quick search!</h1>
             <div className={styles.field}>    
-                <input  type="text" placeholder="Type an address, a place or a will."/>
+                <input  onChange={BarValue} type="text" placeholder="Type an address, a place or a will."/>
                 <Link to="/restaurants"><button type="button" className={styles.fieldButton}>Search</button></Link>
             </div>
         </div>

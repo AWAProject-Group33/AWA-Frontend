@@ -1,12 +1,28 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import ClientOrderHistory from './clientOrderHistory';
 import OrderStatusConfirm from './orderStatusConfirm';
 import Style from './Header.module.css'
+import {v4 as uuidv4} from "uuid";
+import axios from 'axios';
 
 export default function UserProfile(props) {
 
     const [showOrderHistory, setSeeOrderHistory] = useState(false);
     const [showOrderStatusConfirm, setSeeOrderStatusConfirm] = useState(false);
+
+    const [data, setOrder] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:8080/api/orderhistory')
+            .then(result => setOrder(result.data));
+            console.log(data);
+            }, []);
+
+    const OrderData = data.map (order => {
+      return {...order, id: uuidv4()}
+    })
+
+    console.log(OrderData);
 
     function seeOrderHistory() {
         setSeeOrderHistory(true);

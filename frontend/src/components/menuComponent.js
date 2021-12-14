@@ -9,7 +9,7 @@ export default function MenuComponent(props) {
         <p>{props.price}</p>
         <div className={styles.productQuantity}>
           <input style={{alignSelf: 'center', width: "2em"}} type="number" name="quantity" value="0"></input>
-          <button>Add to Cart</button>
+          <button onClick={props.OnClick}>  Add to Cart</button>
           <hr></hr>
           <button>v</button>
         </div>
